@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F7BBEB5236C4A7F00FD0DDA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F7BBEB4236C4A7F00FD0DDA /* main.cpp */; };
+		9F7BBEBD236C4AB600FD0DDA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7BBEBC236C4AB600FD0DDA /* OpenGL.framework */; };
+		9F7BBEBF236C4ABB00FD0DDA /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7BBEBE236C4ABB00FD0DDA /* GLUT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		9F7BBEB1236C4A7F00FD0DDA /* Avion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Avion; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7BBEB4236C4A7F00FD0DDA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9F7BBEBC236C4AB600FD0DDA /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		9F7BBEBE236C4ABB00FD0DDA /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F7BBEBF236C4ABB00FD0DDA /* GLUT.framework in Frameworks */,
+				9F7BBEBD236C4AB600FD0DDA /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +49,7 @@
 			children = (
 				9F7BBEB3236C4A7F00FD0DDA /* Avion */,
 				9F7BBEB2236C4A7F00FD0DDA /* Products */,
+				9F7BBEBB236C4AB600FD0DDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +67,15 @@
 				9F7BBEB4236C4A7F00FD0DDA /* main.cpp */,
 			);
 			path = Avion;
+			sourceTree = "<group>";
+		};
+		9F7BBEBB236C4AB600FD0DDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F7BBEBE236C4ABB00FD0DDA /* GLUT.framework */,
+				9F7BBEBC236C4AB600FD0DDA /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
