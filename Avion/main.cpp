@@ -13,48 +13,60 @@
 #include <GL/glut.h>
 #endif
 
+#include "Objeto.hpp"
 #include <stdlib.h>
 
 void drawAxis()
 {
     //glShadeModel(GL_SMOOTH);
     //X axis in red
-    glColor3f(1.0f,0.0f,0.0f);
+    glColor3ub(30, 136, 229); // X Green
     glBegin(GL_LINES);
-    glVertex3f(-3.0,0.0,0.0);
-    glVertex3f(3.0,0.0,0.0);
+    glVertex3f(-300.0,0.0,0.0);
+    glVertex3f(300.0,0.0,0.0);
     glEnd();
+    glRasterPos3f(320.0f,0.0f,0.0);
+    glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, 'X');
+
     //Y axis in green
-    glColor3f(0.0f,1.0f,0.0f);
+    glColor3ub(183, 28, 28); // Y Red
     glBegin(GL_LINES);
-    glVertex3f(0.0,-3.0,0.0);
-    glVertex3f(0.0,3.0,0.0);
+    glVertex3f(0.0,-300.0,0.0);
+    glVertex3f(0.0,300.0,0.0);
     glEnd();
+    glRasterPos3f(0.0f,320.0f,0.0);
+    glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, 'Y');
+    
     //Z axis in blue
-    glColor3f(0.0f,0.0f,1.0f);
+    glColor3ub( 0, 77, 64 ); // Z Green
     glBegin(GL_LINES);
-    glVertex3f(0.0,0.0,-3.0);
-    glVertex3f(0.0,0.0,3.0);
+    glVertex3f(0.0,0.0,-300.0);
+    glVertex3f(0.0,0.0,300.0);
     glEnd();
+    glRasterPos3f(0.0f,0.0f,320.0);
+    glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, 'Z');
+    
 }
 
 void display()
 {
-    int p;
     glClear(GL_COLOR_BUFFER_BIT);
     drawAxis();
-    glFlush();
     
+    
+    
+    
+    glFlush();
 }
 
 void init()
 {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(-4, 4, -4, 4, -4, 4);
+    glOrtho(-640, 640, -360, 360, -360, 360);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    gluLookAt(1,1,1,0,0,0,0,1,0);
+    gluLookAt(1,0.1,1,0,0,0,0,1,0);
     glClearColor(0,0,0,0);
 }
 
@@ -62,8 +74,8 @@ int main(int argc, char **argv)
 {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    glutInitWindowPosition(50, 50);
-    glutInitWindowSize(500, 500);
+    glutInitWindowPosition(0, 0);
+    glutInitWindowSize(1280, 720);
     glutCreateWindow("Triangulo a color");
     init();
     glutDisplayFunc(display);
