@@ -7,6 +7,7 @@
 //
 
 #ifdef __APPLE__
+#define GL_SILENCE_DEPRECATION
 #include <GLUT/glut.h>
 #else
 #include <GL/glut.h>
@@ -37,13 +38,13 @@ void drawAxis()
     glEnd();
 }
 
-
 void display()
 {
     int p;
     glClear(GL_COLOR_BUFFER_BIT);
     drawAxis();
     glFlush();
+    
 }
 
 void init()

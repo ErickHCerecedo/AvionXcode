@@ -10,6 +10,9 @@
 		9F7BBEB5236C4A7F00FD0DDA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F7BBEB4236C4A7F00FD0DDA /* main.cpp */; };
 		9F7BBEBD236C4AB600FD0DDA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7BBEBC236C4AB600FD0DDA /* OpenGL.framework */; };
 		9F7BBEBF236C4ABB00FD0DDA /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7BBEBE236C4ABB00FD0DDA /* GLUT.framework */; };
+		9FCCBD13236E4E930069149E /* Systema.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCBD11236E4E930069149E /* Systema.cpp */; };
+		9FCCBD16236E50F10069149E /* Objeto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCBD14236E50F10069149E /* Objeto.cpp */; };
+		9FCCBD19236E51860069149E /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCBD17236E51860069149E /* Matrix.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +32,12 @@
 		9F7BBEB4236C4A7F00FD0DDA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9F7BBEBC236C4AB600FD0DDA /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		9F7BBEBE236C4ABB00FD0DDA /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		9FCCBD11236E4E930069149E /* Systema.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Systema.cpp; sourceTree = "<group>"; };
+		9FCCBD12236E4E930069149E /* Systema.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Systema.hpp; sourceTree = "<group>"; };
+		9FCCBD14236E50F10069149E /* Objeto.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Objeto.cpp; sourceTree = "<group>"; };
+		9FCCBD15236E50F10069149E /* Objeto.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Objeto.hpp; sourceTree = "<group>"; };
+		9FCCBD17236E51860069149E /* Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		9FCCBD18236E51860069149E /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +74,12 @@
 			isa = PBXGroup;
 			children = (
 				9F7BBEB4236C4A7F00FD0DDA /* main.cpp */,
+				9FCCBD11236E4E930069149E /* Systema.cpp */,
+				9FCCBD12236E4E930069149E /* Systema.hpp */,
+				9FCCBD14236E50F10069149E /* Objeto.cpp */,
+				9FCCBD15236E50F10069149E /* Objeto.hpp */,
+				9FCCBD17236E51860069149E /* Matrix.cpp */,
+				9FCCBD18236E51860069149E /* Matrix.hpp */,
 			);
 			path = Avion;
 			sourceTree = "<group>";
@@ -134,6 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FCCBD19236E51860069149E /* Matrix.cpp in Sources */,
+				9FCCBD16236E50F10069149E /* Objeto.cpp in Sources */,
+				9FCCBD13236E4E930069149E /* Systema.cpp in Sources */,
 				9F7BBEB5236C4A7F00FD0DDA /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
