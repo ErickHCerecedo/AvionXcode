@@ -9,7 +9,19 @@
 #ifndef Objeto_hpp
 #define Objeto_hpp
 
+#ifdef __APPLE__
+#define GL_SILENCE_DEPRECATION
+#include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
+
+// Librerias
 #include <stdio.h>
+#include <iostream>
+
+// Clases
+#include "Systema.hpp"
 
 class Objeto{
 private:

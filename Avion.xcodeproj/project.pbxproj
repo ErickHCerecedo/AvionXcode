@@ -36,7 +36,7 @@
 		9FCCBD12236E4E930069149E /* Systema.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Systema.hpp; sourceTree = "<group>"; };
 		9FCCBD14236E50F10069149E /* Objeto.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Objeto.cpp; sourceTree = "<group>"; };
 		9FCCBD15236E50F10069149E /* Objeto.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Objeto.hpp; sourceTree = "<group>"; };
-		9FCCBD17236E51860069149E /* Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		9FCCBD17236E51860069149E /* Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		9FCCBD18236E51860069149E /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

@@ -9,14 +9,29 @@
 #ifndef Matrix_hpp
 #define Matrix_hpp
 
+// Librerias
 #include <stdio.h>
+#include <iostream>
 
 class Matrix{
-private:
-    int MatrixA;
-    int MatrixB;
 public:
-    int * multiplicacion();
-}
+    Matrix();
+    Matrix(float[4][4], int, int);
+    
+    int rows;
+    int columns;
+    float matriz[4][4];
+
+    virtual ~Matrix();
+    int getRows();
+    int getColumns();
+    float getValue(int, int);
+    void setValue(int, int, float);
+    void setMatrix(float[4][4], int, int);
+    void LoadIdentity();
+    
+    void Multiplicacion(Matrix, Matrix);
+    void toString();
+};
 
 #endif /* Matrix_hpp */
