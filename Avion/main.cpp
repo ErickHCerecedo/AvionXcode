@@ -26,6 +26,8 @@
 Systema miSistema;
 Objeto  miObjeto(&miSistema);
 
+Objeto  miObjeto2(&miSistema);
+
 void drawAxis()
 {
     //glShadeModel(GL_SMOOTH);
@@ -61,29 +63,26 @@ void drawAxis()
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT);
-    drawAxis();
     
     miSistema.push();
+    drawAxis();
     
     printf("1.Escala 0.2 de Matriz \n");
     miSistema.escalar(0.2, 0.2, 0.2);
     miObjeto.draw();
-    
-    printf("2.Tralado Z = 100 de Matriz \n");
-    miSistema.transladar(1, 1, 100);
-    miObjeto.draw();
-    
-    printf("2.Rotacion Y Avance X = 100 \n");
-    miSistema.rotarY(90);
-    miObjeto.draw();
-    
-    miSistema.transladar(100, 1, 1);
-    miObjeto.draw();
-    
-    //miSistema.escalar(2, 2, 2);
-    //miObjeto.draw();
-    
+
     miSistema.pop();
+    
+    miSistema.push();
+    drawAxis();
+    printf("1.Escala 0.2 de Matriz \n");
+    miSistema.escalar(0.2, 0.2, 0.2);
+    miSistema.transladar(0, 0, 200);
+    miSistema.rotarY(100);
+    miObjeto2.draw();
+
+    miSistema.pop();
+    
     
     glFlush();
 }
@@ -99,6 +98,107 @@ void init()
     glClearColor(0,0,0,0);
 }
 
+void keyboard(unsigned char key, int x, int y)
+{
+    switch (key)
+    {
+        // Rota XYZ
+        case 'r':
+        case 'R':
+            printf("Rota todo \n");
+            miSistema.rotarXYZ(1);
+            break;
+        // Rota y
+        case 't':
+        case 'T':
+            printf("Adelante \n");
+            miSistema.rotarY(1);
+            break;
+        // Rota -y
+        case 'y':
+        case 'Y':
+            printf("Adelante \n");
+            miSistema.rotarY(-1);
+            break;
+        // Rota X
+        case 'g':
+        case 'G':
+            printf("Adelante \n");
+            miSistema.rotarX(1);
+            break;
+        // Rota -X
+        case 'h':
+        case 'H':
+            printf("Adelante \n");
+            miSistema.rotarX(-1);
+            break;
+        // Rota Z
+        case 'b':
+        case 'B':
+            printf("Adelante \n");
+            miSistema.rotarZ(1);
+            break;
+            // Rota -Z
+        case 'n':
+        case 'N':
+            printf("Adelante \n");
+            miSistema.rotarZ(-1);
+            break;
+        // Adelante
+        case 'w':
+        case 'W':
+            printf("Adelante \n");
+            miSistema.transladar(6, 0, 0);
+            break;
+        // Atras
+        case 's':
+        case 'S':
+            printf("Atras \n");
+            miSistema.transladar(-6, 0, 0);
+            break;
+        // Izquierda
+        case 'a':
+        case 'A':
+            printf("Izquierda \n");
+            miSistema.transladar(0, 0, 6);
+            break;
+        // Derecha
+        case 'd':
+        case 'D':
+            printf("Derecha \n");
+            miSistema.transladar(0, 0, 6);
+            break;
+        // Arriba
+        case 'z':
+        case 'Z':
+            printf("Arriba \n");
+            miSistema.transladar(0, 6, 0);
+            break;
+        // Abajo
+        case 'x':
+        case 'X':
+            printf("Abajo \n");
+            miSistema.transladar(0, -6, 0);
+            break;
+        // Crece
+        case 'o':
+        case 'O':
+            printf("Aumenta \n");
+            miSistema.escalar(1.1, 1.1, 1.1);
+            break;
+        // Baja
+        case 'p':
+        case 'P':
+            printf("Dismunuye \n");
+            miSistema.escalar(0.9, 0.9, 0.9);
+            break;
+        case 27:   // escape
+            exit(0);
+            break;
+            
+    }
+}
+
 int main(int argc, char **argv)
 {
     glutInit(&argc, argv);
@@ -108,9 +208,9 @@ int main(int argc, char **argv)
     glutCreateWindow("Examen Parcial 2");
     init();
     glutDisplayFunc(display);
-    //glutIdleFunc(display);
+    glutIdleFunc(display);
+    glutKeyboardFunc(keyboard);
     glutMainLoop();
- 
     return 0;
 }
 

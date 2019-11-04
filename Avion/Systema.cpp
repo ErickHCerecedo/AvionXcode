@@ -135,12 +135,9 @@ void Systema::rotarZ(float deg)
 
 void Systema::rotarXYZ(float deg)
 {
-    
-}
-
-void Systema::clonarA()
-{
-    
+    rotarX(1);
+    rotarY(1);
+    rotarZ(1);
 }
 
 void Systema::push()

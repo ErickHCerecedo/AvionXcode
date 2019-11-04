@@ -26,6 +26,7 @@ Objeto::~Objeto()
 void Objeto::draw()
 {
     
+    
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 17; j++) {
             _nave[i][j] = 0;

@@ -31,8 +31,6 @@ public:
     void rotarZ(float);
     void rotarXYZ(float);
     
-    void clonarA();
-    
     float _T[4][4], _R[4][4], _E[4][4], _A[4][4];
     
     Matrix T = Matrix(_T,4,4);

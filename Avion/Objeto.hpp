@@ -39,10 +39,7 @@ private:
         
         { 1,   1,   1,   1,   1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,},
     };
-    
-    //Matrix Nave = Matrix(<#float (*)[4]#>, <#int#>, <#int#>);
-    
-    
+
 public:
     Objeto();
     Objeto(Systema*);
