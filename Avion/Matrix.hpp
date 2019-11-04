@@ -17,12 +17,12 @@ class Matrix{
 public:
     Matrix();
     Matrix(float[4][4], int, int);
+    virtual ~Matrix();
     
     int rows;
     int columns;
     float matriz[4][4];
 
-    virtual ~Matrix();
     int getRows();
     int getColumns();
     float getValue(int, int);

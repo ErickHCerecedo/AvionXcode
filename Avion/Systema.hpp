@@ -22,7 +22,7 @@
 class Systema{
 public:
     Systema();
-    ~Systema();
+    virtual ~Systema();
     
     void transladar(float, float, float);
     void escalar(float, float, float);

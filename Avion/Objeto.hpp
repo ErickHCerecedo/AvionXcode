@@ -25,11 +25,25 @@
 
 class Objeto{
 private:
-    float Mobjeto[1][1];
-    float _Mobjeto[1][1];
+    Systema *system;
+    float nave[4][17] =
+    {
+        //x1   x2   x3   x4   x5    x6.1  x7.2  x8.3  x9.4  x10.1 x11.2 x12.3 x13.4 x14.1 x15.2 x16.3 X17
+        {-50,  50,  50, -50,  0,   -50,   50,   50,  -50,   50,  -50,  -50,   50,   120, -120, -120,  120,},
+        //y1   y2   y3   y4   y5
+        { 50,  50, -50, -50,  0,    50,   50,  -50,  -50,   75,   75,  -50,  -50,   30,   30,   30,   30,},
+        //z1   z2   z3   z4   z5
+        { 20,  20,  20,  20,  120, -130, -130, -130, -130, -160, -160, -160, -160, -30,  -30,  -100, -100,},
+        
+        { 1,   1,   1,   1,   1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,},
+    };
+    
 public:
+    Objeto();
+    Objeto(Systema*);
+    virtual ~Objeto();
     void draw();
-    void Xmodelado();
+    //void Xmodelado();
 };
 
 #endif /* Objeto_hpp */

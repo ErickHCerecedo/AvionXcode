@@ -19,6 +19,11 @@ Systema::Systema()
     }
 }
 
+Systema::~Systema()
+{
+    
+}
+
 void Systema::transladar(float _x, float _y, float _z)
 {
     T.LoadIdentity();

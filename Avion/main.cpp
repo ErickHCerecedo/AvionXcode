@@ -23,6 +23,9 @@
 #include "Objeto.hpp"
 #include "Matrix.hpp"
 
+Systema miSistema;
+Objeto  miObjeto(&miSistema);
+
 void drawAxis()
 {
     //glShadeModel(GL_SMOOTH);
@@ -59,7 +62,18 @@ void display()
 {
     glClear(GL_COLOR_BUFFER_BIT);
     drawAxis();
-
+    
+    miSistema.push();
+    miObjeto.draw();
+    
+    miSistema.escalar(2, 2, 2);
+    miObjeto.draw();
+    
+    miSistema.transladar(5, 5, 5);
+    miObjeto.draw();
+    
+    miSistema.push();
+    
     glFlush();
 }
 
@@ -101,7 +115,6 @@ void TestMatriz(){
     myR.Multiplicacion(myM, myM2);
     
     myR.toString();
-    
 }
 
 int main(int argc, char **argv)
@@ -110,9 +123,9 @@ int main(int argc, char **argv)
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowPosition(0, 0);
     glutInitWindowSize(1280, 720);
-    glutCreateWindow("Triangulo a color");
+    glutCreateWindow("Examen Parcial 2");
     init();
-    TestMatriz();
+    //TestMatriz();
     glutDisplayFunc(display);
     glutIdleFunc(display);
     glutMainLoop();
