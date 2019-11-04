@@ -15,6 +15,7 @@ Systema::Systema()
             T.setValue(i, j, (i==j)?1:0);
             R.setValue(i, j, (i==j)?1:0);
             E.setValue(i, j, (i==j)?1:0);
+            A.setValue(i, j, (i==j)?1:0);
         }
     }
 }
@@ -37,11 +38,7 @@ void Systema::transladar(float _x, float _y, float _z)
     mAuxiliar.Multiplicacion(T, A);
     
     // Actualiza valor de _A matriz
-    for(int i=0; i<4; i++){
-        for(int j=0; j<4; j++){
-            _A[i][j] = mAuxiliar.getValue(i, j);
-        }
-    }
+    A.setMatrix(mAuxiliar);
     
     mAuxiliar.~Matrix();
 }
@@ -58,12 +55,8 @@ void Systema::escalar(float _x, float _y, float _z)
     // Mtrasladada tiene la multiplicacion de las matrices
     mAuxiliar.Multiplicacion(E, A);
     
-    // Actualiza valor de _A matriz
-    for(int i=0; i<4; i++){
-        for(int j=0; j<4; j++){
-            _A[i][j] = mAuxiliar.getValue(i, j);
-        }
-    }
+    // Actualiza valor de matriz A
+    A.setMatrix(mAuxiliar);
     
     mAuxiliar.~Matrix();
 }
@@ -86,11 +79,8 @@ void Systema::rotarX(float deg)
     mAuxiliar.Multiplicacion(R, A);
     
     // Actualiza valor de _A matriz
-    for(int i=0; i<4; i++){
-        for(int j=0; j<4; j++){
-            _A[i][j] = mAuxiliar.getValue(i, j);
-        }
-    }
+    A.setMatrix(mAuxiliar);
+    
     mAuxiliar.~Matrix();
     
 }
@@ -113,11 +103,8 @@ void Systema::rotarY(float deg)
     mAuxiliar.Multiplicacion(R, A);
     
     // Actualiza valor de _A matriz
-    for(int i=0; i<4; i++){
-        for(int j=0; j<4; j++){
-            _A[i][j] = mAuxiliar.getValue(i, j);
-        }
-    }
+    A.setMatrix(mAuxiliar);
+    
     mAuxiliar.~Matrix();
     
 }
@@ -140,11 +127,8 @@ void Systema::rotarZ(float deg)
     mAuxiliar.Multiplicacion(R, A);
     
     // Actualiza valor de _A matriz
-    for(int i=0; i<4; i++){
-        for(int j=0; j<4; j++){
-            _A[i][j] = mAuxiliar.getValue(i, j);
-        }
-    }
+    A.setMatrix(mAuxiliar);
+    
     mAuxiliar.~Matrix();
     
 }

@@ -64,15 +64,26 @@ void display()
     drawAxis();
     
     miSistema.push();
+    
+    printf("1.Escala 0.2 de Matriz \n");
+    miSistema.escalar(0.2, 0.2, 0.2);
     miObjeto.draw();
     
-    miSistema.escalar(2, 2, 2);
+    printf("2.Tralado Z = 100 de Matriz \n");
+    miSistema.transladar(1, 1, 100);
     miObjeto.draw();
     
-    miSistema.transladar(5, 5, 5);
+    printf("2.Rotacion Y Avance X = 100 \n");
+    miSistema.rotarY(90);
     miObjeto.draw();
     
-    miSistema.push();
+    miSistema.transladar(100, 1, 1);
+    miObjeto.draw();
+    
+    //miSistema.escalar(2, 2, 2);
+    //miObjeto.draw();
+    
+    miSistema.pop();
     
     glFlush();
 }
@@ -88,35 +99,6 @@ void init()
     glClearColor(0,0,0,0);
 }
 
-void TestMatriz(){
-    float mA[4][4] =
-    {
-        {1, 2, 3, 4},
-        {1, 2, 3, 4},
-        {1, 2, 3, 4},
-        {1, 2, 3, 4},
-    };
-    
-    float mB[4][4] =
-    {
-        {1, 2, 3, 4},
-        {1, 2, 3, 4},
-        {1, 2, 3, 4},
-        {1, 2, 3, 4},
-    };
-    
-    Matrix myM = Matrix(mA, 4, 4);
-    Matrix myM2 = Matrix(mB, 4, 4);
-    myM.toString();
-    printf("\n");
-    myM2.toString();
-    printf("\n");
-    Matrix myR = Matrix();
-    myR.Multiplicacion(myM, myM2);
-    
-    myR.toString();
-}
-
 int main(int argc, char **argv)
 {
     glutInit(&argc, argv);
@@ -125,9 +107,8 @@ int main(int argc, char **argv)
     glutInitWindowSize(1280, 720);
     glutCreateWindow("Examen Parcial 2");
     init();
-    //TestMatriz();
     glutDisplayFunc(display);
-    glutIdleFunc(display);
+    //glutIdleFunc(display);
     glutMainLoop();
  
     return 0;

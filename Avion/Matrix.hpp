@@ -28,6 +28,8 @@ public:
     float getValue(int, int);
     void setValue(int, int, float);
     void setMatrix(float[4][4], int, int);
+    void setMatrix(Matrix);
+    
     void LoadIdentity();
     
     void Multiplicacion(Matrix, Matrix);

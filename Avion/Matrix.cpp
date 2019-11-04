@@ -75,6 +75,15 @@ void Matrix::setMatrix(float _matriz[4][4], int _rows, int _columns)
     }
 }
 
+void Matrix::setMatrix(Matrix _matriz)
+{
+    for (int i=0; i<4; i++) {
+        for (int j=0; j<4; j++) {
+            matriz[i][j] = _matriz.getValue(i,j);
+        }
+    }
+}
+
 void Matrix::LoadIdentity()
 {
     for (int i = 0; i < rows; i++) {

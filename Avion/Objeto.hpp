@@ -22,10 +22,12 @@
 
 // Clases
 #include "Systema.hpp"
+#include "Matrix.hpp"
 
 class Objeto{
 private:
     Systema *system;
+    float _nave[4][17];
     float nave[4][17] =
     {
         //x1   x2   x3   x4   x5    x6.1  x7.2  x8.3  x9.4  x10.1 x11.2 x12.3 x13.4 x14.1 x15.2 x16.3 X17
@@ -38,11 +40,15 @@ private:
         { 1,   1,   1,   1,   1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,},
     };
     
+    //Matrix Nave = Matrix(<#float (*)[4]#>, <#int#>, <#int#>);
+    
+    
 public:
     Objeto();
     Objeto(Systema*);
     virtual ~Objeto();
     void draw();
+
     //void Xmodelado();
 };
 
